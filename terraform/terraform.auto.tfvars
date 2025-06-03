@@ -1,0 +1,5 @@
+cloudflare_api_token="test"
+cloudflare_domain="test"
+domain_from_tazworks="test"
+instascreen_dns_prefix="test"
+cloudflare_zone_id="test"
