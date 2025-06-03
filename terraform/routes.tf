@@ -2,13 +2,15 @@
 # Cloudflare worker scripts
 ###########################
 resource "cloudflare_workers_script" "proxy_forwarder" {
-  name = "proxy-forwarder"
-  content = file("${path.module}/forwarder.js")
+  name       = "proxy-forwarder"
+  content    = file("${path.module}/forwarder.js")
+  account_id = var.cloudflare_account_id
 }
 
 resource "cloudflare_workers_script" "injector" {
-  name = "injector"
-  content = file("${path.module}/worker.js")
+  name       = "injector"
+  content    = file("${path.module}/worker.js")
+  account_id = var.cloudflare_account_id
 }
 ###########################
 # Cloudflare worker routes
@@ -16,24 +18,25 @@ resource "cloudflare_workers_script" "injector" {
 resource "cloudflare_workers_route" "vidforwarder_route" {
   zone_id = var.cloudflare_zone_id
   pattern = "${var.cloudflare_domain}/vidforwarder"
-  script  = cloudflare_workers_script.proxy_forwarder.name
+
+  script_name = cloudflare_workers_script.proxy_forwarder.name
 }
 
 resource "cloudflare_workers_route" "orders_searches_taz_route" {
-  zone_id = var.cloudflare_zone_id
-  pattern = "${var.cloudflare_domain}/orders/searches.taz"
-  script  = cloudflare_workers_script.injector.name
+  zone_id     = var.cloudflare_zone_id
+  pattern     = "${var.cloudflare_domain}/orders/searches.taz"
+  script_name = cloudflare_workers_script.injector.name
 }
 
 resource "cloudflare_workers_route" "libs_route" {
   zone_id = var.cloudflare_zone_id
   pattern = "${var.cloudflare_domain}/_libs/*"
-} 
+}
 
 resource "cloudflare_workers_route" "scripts_routes" {
   zone_id = var.cloudflare_zone_id
   pattern = "${var.cloudflare_domain}/_scripts/*"
-} 
+}
 
 resource "cloudflare_workers_route" "styles_route" {
   zone_id = var.cloudflare_zone_id

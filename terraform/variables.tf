@@ -13,12 +13,17 @@ variable "cloudflare_zone_id" {
   type = string
 }
 
-variable "domain_from_tazworks" {
+variable "cloudflare_account_id" {
+  description = "Account ID where the resources should be deployed"
+  type = string
+}
+
+variable "tazworks_platform_url" {
   description = "Domain that will redirect to Tazworks"
   type = string
 }
 
-variable "instascreen_dns_prefix" {
+variable "instascreen_url" {
   description = "Instascreen dns prefix that will generate the DNS to be redirected"
   type = string 
 }

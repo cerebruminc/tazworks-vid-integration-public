@@ -1,5 +1,6 @@
 cloudflare_api_token="test"
 cloudflare_domain="test"
-domain_from_tazworks="test"
-instascreen_dns_prefix="test"
+tazworks_platform_url="test"
+instascreen_url="test"
 cloudflare_zone_id="test"
+cloudflare_account_id="test"
