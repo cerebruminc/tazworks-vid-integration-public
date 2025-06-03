@@ -1,0 +1,74 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "files": {
+    "ignore": [
+      "**/.next/*",
+      "**/node_modules/*",
+      "**/out/*",
+      "next.config.js",
+      "public/**/*",
+      "src/generated/graphql.ts",
+      "tests/**/*",
+      "package.json"
+    ]
+  },
+  "organizeImports": {
+    "enabled": false
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 120,
+    "ignore": [
+      ".next",
+      "build",
+      "coverage",
+      "node_modules",
+      "package-lock.json",
+      "public/**/*",
+      "src/generated/graphql.ts",
+      "yarn.lock"
+    ]
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "always",
+      "jsxQuoteStyle": "double",
+      "semicolons": "always",
+      "quoteProperties": "asNeeded",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "trailingCommas": "all"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "useKeyWithClickEvents": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "off",
+        "noDoubleEquals": "off",
+        "noRedeclare": "off"
+      },
+      "style": {
+        "useTemplate": "off",
+        "noUnusedTemplateLiteral": "off",
+        "noInferrableTypes": "off",
+        "noUselessElse": "error",
+        "useSingleVarDeclarator": "off",
+        "useDefaultParameterLast": "off",
+        "useImportType": "off"
+      },
+      "complexity": {
+        "noUselessCatch": "off",
+        "useOptionalChain": "off"
+      }
+    }
+  }
+}

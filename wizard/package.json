@@ -1,0 +1,46 @@
+{
+  "name": "tazworks-vid-integration-public",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "next build",
+    "check": "biome check --apply .",
+    "codegen": "graphql-codegen -r dotenv/config --config codegen.yml",
+    "dev:https": "NODE_TLS_REJECT_UNAUTHORIZED=0 concurrently \"next dev\" \"local-ssl-proxy --key $CEREBRUM_SSL_KEY --cert $CEREBRUM_SSL_CERT --source 5002 --target 3000\"",
+    "dev": "next dev",
+    "format": "biome format --write .",
+    "go": "npm install && npm run dev:https",
+    "lint": "biome lint .",
+    "start": "next start",
+    "tsc": "tsc -p ./tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerebruminc/tazworks-vid-integration-public.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cerebruminc/tazworks-vid-integration-public/issues"
+  },
+  "homepage": "https://github.com/cerebruminc/tazworks-vid-integration-public#readme",
+  "description": "",
+  "dependencies": {
+    "@cerebruminc/cerebellum": "^15.16.1",
+    "axios": "^1.9.0",
+    "next": "^14.2.29",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "save": "^2.9.0",
+    "styled-components": "^6.1.18"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.15.29",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@types/styled-components": "^5.1.34",
+    "dotenv": "^16.5.0",
+    "typescript": "^5.8.3"
+  }
+}
