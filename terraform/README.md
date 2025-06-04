@@ -125,13 +125,14 @@ provider "cloudflare" {
 }
 
 module "tazworks_vid_integration" {
-  source = "github.com/cerebruminc/tazworks-vid-integration-public"
+  source = "github.com/cerebruminc/tazworks-vid-integration-public//terraform"
 
   cloudflare_domain = var.cloudflare_domain
   cloudflare_zone_id = var.cloudflare_zone_id
 }
 ```
 
+For more details, check the file `example.tf` on the root of this repository.
 ---
 
 ## Step 5: Store Your Cloudflare API Token Safely
