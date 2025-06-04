@@ -16,8 +16,7 @@ async function handleRequest(request) {
   }
 
   // Forward the request to the target endpoint
-  const targetUrl =
-    "https://app.windmill.dev/api/w/cerebrum/jobs/run_wait_result/f/u/sebastian/considerate_flow?token=Reb6BHYEu2JtyuQnltoWNlJdQ3SOTy4X";
+  const targetUrl = "";
 
   const modifiedRequest = new Request(targetUrl, {
     method: request.method,
