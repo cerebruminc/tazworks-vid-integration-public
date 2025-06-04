@@ -24,7 +24,7 @@ variable "tazworks_platform_url" {
 }
 
 variable "instascreen_url" {
-  description = "Instascreen dns prefix that will generate the DNS to be redirected"
+  description = "Instascreen URL that will generate the DNS to be redirected"
   type = string 
 }
 

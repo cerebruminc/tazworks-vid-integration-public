@@ -19,8 +19,8 @@ resource "cloudflare_dns_record" "vid_button" {
 resource "cloudflare_dns_record" "" {
   zone_id = var.cloudflare_zone_id
   comment = "CNAME DNS record for a instascreen domain"
-  content = "${var.instascreen_dns_prefix}.instascreen.net"
-  name    = var.domain_from_tazworks
+  content = "${var.instascreen_url}"
+  name    = var.tazworks_platform_url
   proxied = true
   settings = {
     ipv4_only = true
