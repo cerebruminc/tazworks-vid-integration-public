@@ -1,6 +1,0 @@
-cloudflare_api_token="test"
-cloudflare_domain="test"
-tazworks_platform_url="test"
-instascreen_url="test"
-cloudflare_zone_id="test"
-cloudflare_account_id="test"
