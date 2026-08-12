@@ -36,6 +36,7 @@
     "styled-components": "^6.1.18"
   },
   "overrides": {
+    "fast-uri": "3.1.5",
     "postcss": "8.5.15"
   },
   "devDependencies": {
